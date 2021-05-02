@@ -16,7 +16,7 @@ brew install tippecanoe
 or 
 arch -x86_64 brew install tippecanoe
 ```
-地図ダウンロード (Rakefile REGION / AREA) see also [OSM download](http://download.geofabrik.de/)  
+OSMの地図データダウンロードする (Rakefile内のREGION/AREA、[OSM download](http://download.geofabrik.de/)  
 日本で1.5Gbほど  
 
 make-extent.js に緯度経度の領域をセットする（仮に福井県となっている）  
