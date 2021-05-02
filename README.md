@@ -1,7 +1,8 @@
 # sh2
 
 ## オープンな地図データと地図アプリの動かし方
-index.html を開く
+index.html を開く  
+https://taisukef.github.io/sh2/  
 
 ## オープンな地図データと地図アプリの作り方
 
