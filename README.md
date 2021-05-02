@@ -20,8 +20,11 @@ OSMの地図データダウンロードする (Rakefile内のREGION/AREA、[OSM 
 日本で1.5Gbほど  
 
 make-extent.js に緯度経度の領域をセットする（仮に福井県となっている）  
+ベクトルタイルを生成する(docs/zxy)  
 ```rake tiles```  
+
 docs/style.json の表示する中心 center を変更する  
 docs/style.json のホストを編集する  
 docs/index.html のホストを編集する  
+
 docs をルートとしてwebサーバーを起動する  
