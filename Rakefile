@@ -1,5 +1,7 @@
-REGION = 'europe'
-AREA = 'albania'
+#REGION = 'europe'
+#AREA = 'albania'
+REGION = 'asia'
+AREA = 'japan'
 
 desc 'download source geospatial data to the place'
 task :download do
@@ -9,6 +11,7 @@ end
 
 desc 'build tiles from source data'
 task :tiles do
+  sh "deno run -A make-extent.js"
   sh "osmium extract --overwrite --polygon=extent/extent.geojson --output=src/extract.osm.pbf src/#{AREA}-latest.osm.pbf"
   sh "osmium export --config conf/osmium-export-config.json --index-type=sparse_file_array --output-format=geojsonseq --output=- src/extract.osm.pbf | node conf/filter.js | tippecanoe --no-feature-limit --no-tile-size-limit --force --simplification=2 --maximum-zoom=15 --base-zoom=15 --hilbert --output=tiles.mbtiles"
   sh "tile-join --force --no-tile-compression --output-to-directory=docs/zxy --no-tile-size-limit tiles.mbtiles"
