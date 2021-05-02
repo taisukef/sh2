@@ -15,16 +15,19 @@ body { margin: 0; top: 0; bottom: 0; width: 100%; }
 <script type="module">
 import { maplibregl } from "https://taisukef.github.io/maplibre-gl-js/maplibre-gl-es.js?";
 
+const style = "style.json";
+//const style = "style-local.json"; // if you runs on local
+
 const map = new maplibregl.Map({
-  container: 'map',
-  style: 'style.json',
+  container: "map",
+  style,
   attributionControl: true,
   hash: true
 });
 
-map.addControl(new mapboxgl.NavigationControl());
-map.addControl(new mapboxgl.ScaleControl({
-  maxWidth: 200, unit: 'metric'
+map.addControl(new maplibregl.NavigationControl());
+map.addControl(new maplibregl.ScaleControl({
+  maxWidth: 200, unit: "metric"
 }));
 </script>
 </body>
